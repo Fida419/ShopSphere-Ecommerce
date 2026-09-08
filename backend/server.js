@@ -10,7 +10,7 @@ import adminRoutes from "./routes/adminRoutes.js";
 
 dotenv.config();
 const app = express();
-app.use(cors({ origin: process.env.CLIENT_URL || "*", credentials: true }));
+app.use(cors({ origin: process.env.CLIENT_URL || true }));
 app.use(express.json());
 
 app.get("/api/health", (_, res) => res.json({ status: "ok", service: "ShopSphere API" }));
